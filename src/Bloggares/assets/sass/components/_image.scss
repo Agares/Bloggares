@@ -1,0 +1,25 @@
+﻿@import "../_colours.scss";
+
+img {
+	border: 1px solid #aaa;
+}
+
+img.hero {
+	max-width: 100%;
+	padding: 0;
+	border: 0;
+}
+
+img.inline {
+	display: block;
+}
+
+img.inline.-left {
+	float: left;
+	margin-right: 10px;
+}
+
+img.inline.-right {
+	float: right;
+	margin-left: 10px;
+}

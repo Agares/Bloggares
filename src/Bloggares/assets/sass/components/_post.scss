@@ -1,0 +1,12 @@
+﻿@import "../_colours.scss";
+@import "../_utilities.scss";
+
+.post {
+	max-width: 90vw;
+	margin: 0 auto;
+	text-align: justify;
+}
+
+.post figure {
+	@include clearfix;
+}
