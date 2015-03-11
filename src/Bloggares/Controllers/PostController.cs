@@ -26,9 +26,8 @@ namespace Bloggares.Controllers
 		// I hate regions, but this array's gonna exist here only for a short while, so fuck it ;)
 		#region Fake data
 		private readonly IEnumerable<Post> posts = new Post[] {
-				new Post("test-post", "Test post number one", @"# Diva siste est resurgebant in fluit praedae
-
-## Etruscam aptamque locus magna temporis Peleus
+				new Post("test-post", "Test post number one", @"
+### Etruscam aptamque locus magna temporis Peleus
 
 [Lorem markdownum](http://zeus.ugent.be/) deque **successit tempora passo**
 nostras et gemitu, monstravit fecunda aquae quoniam, de mater Memnonis? Exercere
@@ -45,7 +44,7 @@ eripiunt.
 > Veneris promittit carmen, quem diu. Caerulus edidit altera opemque, a [quantum
 > simul](http://reddit.com/r/thathappened) cadente data.
 
-## Esset est inter me pronepos nos mota
+### Esset est inter me pronepos nos mota
 
 Sed quae audito laetusque quaeque inulta Labitur annos: haud penetraret Thisbes
 laevum Rhadamanthus Dicta, revulsum flos censuque. Dilatus diem verso [positi
@@ -61,7 +60,7 @@ et dabant nunc?
 Ferens ductae, adfusique, illis et dicitur unica. Inficit est numen aris tempore
 [his Gyaroque sumptus](http://www.wtfpl.net/) Ammon.
 
-## Quibus tuum tuque a pariter nomina
+### Quibus tuum tuque a pariter nomina
 
 **Generi** quod **lumine urbes**! Iram ipse et incumbens aera, parvo contra
 perdis; demens Lyctia, ore. Minuunt fuerat! Est arvis adiuvat, litus positasque.
@@ -97,7 +96,7 @@ prius lacrimabile taedas praecingitur."),
         }
 
 		[HttpGet("{slug}")]
-		public object Single(string slug) {
+		public Post Single(string slug) {
 			return posts
 				.Where(x => x.Slug == slug)
 				.Single();

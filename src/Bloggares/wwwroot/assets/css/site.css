@@ -57,7 +57,9 @@ blockquote {
 .post figure::after {
   display: block;
   content: ' ';
-  clear: both; }
+  clear: both;
+  width: 0;
+  visibility: hidden; }
 
 header.site-header {
   margin-bottom: 3rem; }

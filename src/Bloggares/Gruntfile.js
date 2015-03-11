@@ -3,7 +3,7 @@
         browserify: {
             dist: {
                 options: {
-                    transform: ['babelify']
+                	transform: ['babelify', 'brfs'],
                 },
                 files: {
                     'wwwroot/assets/js/application.js': 'assets/js/application.js'
