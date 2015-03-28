@@ -1,6 +1,5 @@
 ﻿using System;
 using Microsoft.Framework.ConfigurationModel;
-using Microsoft.Framework.ConfigurationModel.Json;
 
 namespace Bloggares.Core
 {

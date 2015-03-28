@@ -7,7 +7,7 @@ namespace Bloggares.Core.Services.DAL
 {
 	public class UserDAL
 	{
-		private IDbConnection connection;
+		private readonly IDbConnection connection;
 
 		public UserDAL(IDbConnection connection)
 		{

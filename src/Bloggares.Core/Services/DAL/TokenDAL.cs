@@ -8,7 +8,7 @@ namespace Bloggares.Core.Services.DAL
 {
 	public class TokenDAL
 	{
-		private IDbConnection connection;
+		private readonly IDbConnection connection;
 
 		public TokenDAL(IDbConnection connection)
 		{

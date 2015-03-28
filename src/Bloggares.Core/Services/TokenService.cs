@@ -6,7 +6,7 @@ namespace Bloggares.Core.Services
 {
 	public class TokenService
 	{
-		private TokenDAL tokenDAL;
+		private readonly TokenDAL tokenDAL;
 
 		public TokenService(TokenDAL tokenDAL)
 		{

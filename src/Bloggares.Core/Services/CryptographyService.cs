@@ -6,7 +6,7 @@ namespace Bloggares.Core.Services
 {
 	public class CryptographyService
 	{
-		private SHA512 hasher = SHA512.Create();
+		private readonly SHA512 hasher = SHA512.Create();
 
 		// todo hashing shall be done in other service
 		public byte[] HashPassword(string password)

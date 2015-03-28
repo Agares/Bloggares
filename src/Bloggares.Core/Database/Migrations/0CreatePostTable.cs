@@ -4,12 +4,6 @@ namespace Bloggares.Core.Database.Migrations
 {
 	public class CreatePostTable : ResourceBasedMigration
 	{
-		public override int Id
-		{
-			get
-			{
-				return 0;
-			}
-		}
+		public override int Id => 0;
 	}
 }

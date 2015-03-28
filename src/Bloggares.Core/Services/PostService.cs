@@ -8,7 +8,7 @@ namespace Bloggares.Core.Services
 {
 	public class PostService : IPostService
 	{
-		private IDbConnection connection;
+		private readonly IDbConnection connection;
 
 		public PostService(IDbConnection connection)
 		{

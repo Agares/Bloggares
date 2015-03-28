@@ -6,9 +6,9 @@ namespace Bloggares.Core.Services
 {
 	public class UserService : IUserService
 	{
-		private UserDAL userDAL;
-		private TokenService tokenService;
-		private CryptographyService cryptographyService;
+		private readonly UserDAL userDAL;
+		private readonly TokenService tokenService;
+		private readonly CryptographyService cryptographyService;
 
 		public UserService(UserDAL userDAL, TokenService tokenService, CryptographyService cryptographyService)
 		{

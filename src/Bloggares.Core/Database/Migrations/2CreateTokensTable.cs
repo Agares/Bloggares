@@ -4,12 +4,6 @@ namespace Bloggares.Core.Database.Migrations
 {
 	public class CreateTokensTable : ResourceBasedMigration
 	{
-		public override int Id
-		{
-			get
-			{
-				return 2;
-			}
-		}
+		public override int Id => 2;
 	}
 }
