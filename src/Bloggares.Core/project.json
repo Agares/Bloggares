@@ -1,6 +1,8 @@
 ﻿{
 	"version": "1.0.0-*",
 	"dependencies": {
+		"Microsoft.Framework.ConfigurationModel": "1.0.0-beta3",
+		"Microsoft.Framework.ConfigurationModel.Json": "1.0.0-beta3",
 		"Dapper": "1.9.0",
 		"Npgsql": "2.2.4.3",
 		"Bloggares.Database": ""

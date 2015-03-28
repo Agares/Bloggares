@@ -17,17 +17,16 @@
 		"Microsoft.Framework.ConfigurationModel.Json": "1.0.0-beta3",
 		"Bloggares.Database": "",
 		"Bloggares.Database.Commands": "",
+		"Bloggares.Commands": "",
 		"Bloggares.Core": ""
 	},
 	"compilationOptions": {
 		"languageVersion": "experimental",
 		"warningsAsErrors": true
 	},
-	"resources": [
-		"DBMigrationScripts/**"
-	],
 	"commands": {
-		"db": "Bloggares.Database.Commands"
+		"db": "Bloggares.Database.Commands",
+		"bloggeres": "Bloggares.Commands"
 	},
 	"frameworks": {
 		"aspnet50": {

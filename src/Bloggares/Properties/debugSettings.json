@@ -1,0 +1,9 @@
+{
+	"profiles": [
+		{
+			"name": "bloggeres",
+			"commandName": "bloggeres",
+			"commandLineArgs": "user:create agares 1234 9223372036854775807"
+		}
+	]
+}

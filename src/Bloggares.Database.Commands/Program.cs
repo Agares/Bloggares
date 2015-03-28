@@ -1,31 +1,16 @@
-﻿using System.IO;
-using Microsoft.Framework.ConfigurationModel;
-using Microsoft.Framework.Runtime;
+﻿using Bloggares.Core;
 using Npgsql;
 
 namespace Bloggares.Database.Commands
 {
 	public class Program
 	{
-		private IApplicationEnvironment environment;
-		private MigrationController migrationController;
-
-		public Program(IApplicationEnvironment environment)
-		{
-			this.environment = environment;
-		}
-
 		// todo support downgrade
 		// todo support (up|down)grade to any version
 		public int Main(string[] arguments)
 		{
-			var config = new Configuration();
-			config.AddCommandLine(arguments);
-			if (File.Exists("config.json"))	// todo create some ConfigLoader or something
-			{
-				config.AddJsonFile("config.json");
-			}
-
+			var configurationProvider = new ConfigurationProvider();
+			var config = configurationProvider.Configuration;
 			// todo use DI?
 			var connectionString = config.Get("Database:ConnectionString");
 			var connection = new NpgsqlConnection(connectionString);
