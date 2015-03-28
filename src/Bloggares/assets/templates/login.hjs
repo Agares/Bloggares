@@ -1,0 +1,6 @@
+﻿<form action="#" id="form-login">
+	<input type="text" placeholder="Username" id="form-login-username" />
+	<input type="password" placeholder="Password" id="form-login-password" />
+
+	<button id="form-login-submit">Let me in!</button>
+</form>

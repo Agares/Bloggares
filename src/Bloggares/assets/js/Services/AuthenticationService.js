@@ -1,12 +1,13 @@
 ﻿var superagent = require('superagent');
 
-class PostService
+class AuthenticationService
 {
-	all() {
+	authenticate(username, password) {
 		var promise = new Promise((resolve, reject) => {
 			superagent
-				.get('/api/posts')
-				.query({ token: '5a1f0776-525d-45a4-be08-86f70a8670ed' })
+				.post('/api/authorization') // todo controller and route should contain "authentication" not "authorization"
+				.type('form')
+				.send({ username: username, password: password })
 				.end(function (error, resource) {
 					if (resource.ok) {
 						resolve(JSON.parse(resource.text));
@@ -20,4 +21,4 @@ class PostService
 	}
 }
 
-module.exports = PostService;
+module.exports = AuthenticationService;
