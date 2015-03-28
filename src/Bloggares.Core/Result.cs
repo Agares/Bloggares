@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Bloggares
+namespace Bloggares.Core
 {
 	public abstract class Result<T>
 	{

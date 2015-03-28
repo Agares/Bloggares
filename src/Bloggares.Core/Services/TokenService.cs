@@ -1,8 +1,8 @@
 ﻿using System;
-using Bloggares.Entities;
-using Bloggares.Services.DAL;
+using Bloggares.Core.Entities;
+using Bloggares.Core.Services.DAL;
 
-namespace Bloggares.Services
+namespace Bloggares.Core.Services
 {
 	public class TokenService
 	{

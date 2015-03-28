@@ -1,8 +1,6 @@
-﻿using System;
-using System.Data;
-using Dapper;
+﻿using Bloggares.Database;
 
-namespace Bloggares.Database.Migrations
+namespace Bloggares.Core.Database.Migrations
 {
 	public class CreatePostTable : ResourceBasedMigration
 	{

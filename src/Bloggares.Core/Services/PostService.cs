@@ -1,11 +1,10 @@
 ﻿using System.Collections.Generic;
 using System.Data;
 using System.Linq;
-using Bloggares.Controllers;
-using Bloggares.Entities;
+using Bloggares.Core.Entities;
 using Dapper;
 
-namespace Bloggares.Services
+namespace Bloggares.Core.Services
 {
 	public class PostService : IPostService
 	{

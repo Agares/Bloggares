@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
-using Bloggares.Entities;
-using Bloggares.Services;
+using Bloggares.Core.Entities;
+using Bloggares.Core.Services;
 using Microsoft.AspNet.Mvc;
 
 namespace Bloggares.Controllers

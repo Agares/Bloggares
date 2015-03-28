@@ -1,10 +1,9 @@
-﻿using System;
-using System.Data;
+﻿using System.Data;
 using System.Linq;
-using Bloggares.Entities;
+using Bloggares.Core.Entities;
 using Dapper;
 
-namespace Bloggares.Services.DAL
+namespace Bloggares.Core.Services.DAL
 {
 	public class UserDAL
 	{

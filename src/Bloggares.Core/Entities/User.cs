@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Bloggares.Entities
+namespace Bloggares.Core.Entities
 {
 	public class User
 	{

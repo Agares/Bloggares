@@ -1,11 +1,8 @@
-﻿using System.Data;
-using System.Security.Cryptography;
-using System.Text;
-using Bloggares.Commands;
-using Bloggares.Entities;
-using Bloggares.Services.DAL;
+﻿using Bloggares.Core.Commands;
+using Bloggares.Core.Entities;
+using Bloggares.Core.Services.DAL;
 
-namespace Bloggares.Services
+namespace Bloggares.Core.Services
 {
 	public class UserService : IUserService
 	{

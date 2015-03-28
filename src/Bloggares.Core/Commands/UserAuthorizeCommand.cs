@@ -1,4 +1,4 @@
-﻿namespace Bloggares.Commands
+﻿namespace Bloggares.Core.Commands
 {
 	public class UserAuthorizeCommand
 	{

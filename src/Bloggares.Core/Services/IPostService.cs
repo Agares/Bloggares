@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
-using Bloggares.Entities;
+using Bloggares.Core.Entities;
 
-namespace Bloggares.Services
+namespace Bloggares.Core.Services
 {
 	public interface IPostService
 	{

@@ -2,7 +2,7 @@
 using System.Security.Cryptography;
 using System.Text;
 
-namespace Bloggares.Services
+namespace Bloggares.Core.Services
 {
 	public class CryptographyService
 	{

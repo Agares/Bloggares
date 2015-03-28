@@ -13,12 +13,11 @@
 		"Microsoft.AspNet.Mvc": "6.0.0-beta3",
 		"Microsoft.AspNet.Server.IIS": "1.0.0-beta3",
 		"Microsoft.Framework.DependencyInjection": "1.0.0-beta3",
-		"Npgsql": "2.2.5",
-		"Dapper": "1.9.0",
+		"Microsoft.Framework.ConfigurationModel": "1.0.0-beta3",
+		"Microsoft.Framework.ConfigurationModel.Json": "1.0.0-beta3",
 		"Bloggares.Database": "",
 		"Bloggares.Database.Commands": "",
-		"Microsoft.Framework.ConfigurationModel": "1.0.0-beta3",
-		"Microsoft.Framework.ConfigurationModel.Json": "1.0.0-beta3"
+		"Bloggares.Core": ""
 	},
 	"compilationOptions": {
 		"languageVersion": "experimental",

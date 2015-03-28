@@ -1,8 +1,4 @@
-﻿using System;
-using System.Data;
-using Dapper;
-
-namespace Bloggares.Database.Migrations
+﻿namespace Bloggares.Database.Commands.Migrations
 {
 	public class CreateAuthorizationTables : ResourceBasedMigration
 	{

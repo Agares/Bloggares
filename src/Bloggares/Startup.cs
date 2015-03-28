@@ -1,7 +1,7 @@
 ﻿using System.Data;
+using Bloggares.Core.Services;
+using Bloggares.Core.Services.DAL;
 using Bloggares.Database;
-using Bloggares.Services;
-using Bloggares.Services.DAL;
 using Microsoft.AspNet.Builder;
 using Microsoft.Framework.DependencyInjection;
 using Npgsql;
