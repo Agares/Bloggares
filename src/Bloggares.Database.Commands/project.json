@@ -1,0 +1,24 @@
+﻿{
+	"version": "1.0.0-*",
+	"resources": [
+		"DBMigrationScripts/**"
+	],
+    "dependencies": {
+		"Microsoft.Framework.Runtime": "1.0.0-beta3",
+		"Microsoft.Framework.ConfigurationModel": "1.0.0-beta3",
+		"Microsoft.Framework.ConfigurationModel.Json": "1.0.0-beta3",
+		"Npgsql": "2.2.4.3",
+		"Bloggares.Database": ""
+    },
+	"frameworks": {
+		"aspnet50": {
+			"dependencies": {
+			}
+		} /*, Npgsql does not support coreclr
+        "aspnetcore50" : { 
+            "dependencies": {
+                "System.Runtime": "4.0.20-beta-22523"
+            }
+        }*/
+	}
+}

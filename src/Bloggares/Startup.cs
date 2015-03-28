@@ -1,6 +1,9 @@
-﻿using Microsoft.AspNet.Builder;
-using Microsoft.AspNet.Mvc;
+﻿using System.Data;
+using Bloggares.Database;
+using Bloggares.Services;
+using Microsoft.AspNet.Builder;
 using Microsoft.Framework.DependencyInjection;
+using Npgsql;
 
 namespace Bloggares
 {
@@ -8,12 +11,20 @@ namespace Bloggares
 	{
 		public void Configure(IApplicationBuilder app)
 		{
-			app.UseServices(serviceCollection => {
+			app.UseServices(serviceCollection =>
+			{
 				serviceCollection.AddMvc();
-				/*serviceCollection.Configure<MvcOptions>(x =>
-				{
-					x.Filters.Add(typeof(JsonNameTranslationFilter));
-				});*/
+
+				// todo move to extension method
+				// todo read Connection String from configuration
+				var connection = new NpgsqlConnection("Server=127.0.0.1;Database=Bloggares;User Id=Bloggares;Password=Bloggares");
+				connection.Open();
+				serviceCollection.AddInstance<IDbConnection>(connection);
+
+				// todo all services should have interfaces
+				serviceCollection.AddTransient<IMigrationController, MigrationController>();
+				serviceCollection.AddTransient<IUserService, UserService>();
+				serviceCollection.AddTransient<IPostService, PostService>();
 			});
 
 			app.UseMvc();

@@ -1,0 +1,8 @@
+﻿CREATE TABLE users (
+	id SERIAL PRIMARY KEY, 
+	username VARCHAR(255), 
+	passwordHash BYTEA,
+	accessLevel BIGINT
+);
+
+ALTER TABLE posts ADD COLUMN accessLevel BIGINT DEFAULT 9223372036854775807;
