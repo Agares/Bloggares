@@ -10,21 +10,26 @@ namespace Bloggares.Controllers
 	{
 		private IUserService userService;
 
-		public AuthorizationController(IUserService userService)
+		private TokenService tokenService;
+
+		public AuthorizationController(IUserService userService, TokenService tokenService)
 		{
 			this.userService = userService;
+			this.tokenService = tokenService;
 		}
 
 		[HttpPost]
 		public AuthorizedUser Authorize(string username, string password)
 		{
-			return userService.Authorize(username, password);
+			return userService.Authorize(username, password)
+				.Then(user => user, message => { throw new Exception(message); });
 		}
 
-		[HttpPost("check-token")]// todo rename to validate-token?
-		public AuthorizedUser Authorize(Guid token)	// todo rename to ValidateToken
+		[HttpPost("get-user-by-token")]
+		public AuthorizedUser GetUserByToken(Guid token)
 		{
-			return userService.Authorize(token);
+			return tokenService.GetUserByToken(token)
+				.Then(user => user, message => { throw new Exception(message); });
 		}
 	}
 }

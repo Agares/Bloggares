@@ -1,6 +1,4 @@
-﻿using System.Security;
-
-namespace Bloggares.Commands
+﻿namespace Bloggares.Commands
 {
 	public class UserCreateCommand
 	{
