@@ -1,6 +1,7 @@
 ﻿using System.Data;
 using Bloggares.Database;
 using Bloggares.Services;
+using Bloggares.Services.DAL;
 using Microsoft.AspNet.Builder;
 using Microsoft.Framework.DependencyInjection;
 using Npgsql;
@@ -22,6 +23,10 @@ namespace Bloggares
 				serviceCollection.AddInstance<IDbConnection>(connection);
 
 				// todo all services should have interfaces
+				serviceCollection.AddTransient<UserDAL>();
+				serviceCollection.AddTransient<TokenDAL>();
+				serviceCollection.AddTransient<CryptographyService>();
+				serviceCollection.AddTransient<TokenService>();
 				serviceCollection.AddTransient<IMigrationController, MigrationController>();
 				serviceCollection.AddTransient<IUserService, UserService>();
 				serviceCollection.AddTransient<IPostService, PostService>();

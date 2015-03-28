@@ -1,4 +1,5 @@
-﻿using System.Security.Cryptography;
+﻿using System.Diagnostics.Contracts;
+using System.Security.Cryptography;
 using System.Text;
 
 namespace Bloggares.Services
@@ -10,6 +11,8 @@ namespace Bloggares.Services
 		// todo hashing shall be done in other service
 		public byte[] HashPassword(string password)
 		{
+			Contract.Requires(!string.IsNullOrEmpty(password));
+
 			byte[] passwordBytes = Encoding.UTF32.GetBytes(password);
 
 			return HashPassword(passwordBytes);
@@ -17,6 +20,9 @@ namespace Bloggares.Services
 
 		public byte[] HashPassword(byte[] password)
 		{
+			Contract.Requires(password != null);
+			Contract.Requires(password.Length > 0);
+
 			return hasher.ComputeHash(password);
 		}
 	}
