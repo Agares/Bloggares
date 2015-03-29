@@ -33,8 +33,6 @@ namespace Bloggares.Core.Services
 			return Result<AuthorizedUser>.Ok(authorizedUser);
 		}
 
-		// todo token entity
-		// todo cache?
 		public Result<AuthorizedUser> GetUserByToken(Token token)
 		{
 			var user = userDAL.FindUserByToken(token);
