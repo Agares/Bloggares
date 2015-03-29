@@ -4,11 +4,11 @@ using Bloggares.Core.Services.DAL;
 
 namespace Bloggares.Core.Services
 {
-	public class TokenService
+	public class TokenService : ITokenService
 	{
-		private readonly TokenDAL tokenDAL;
+		private readonly ITokenDAL tokenDAL;
 
-		public TokenService(TokenDAL tokenDAL)
+		public TokenService(ITokenDAL tokenDAL)
 		{
 			this.tokenDAL = tokenDAL;
 		}

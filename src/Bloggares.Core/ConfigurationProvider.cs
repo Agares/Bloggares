@@ -3,7 +3,7 @@ using Microsoft.Framework.ConfigurationModel;
 
 namespace Bloggares.Core
 {
-	public class ConfigurationProvider
+	public class ConfigurationProvider : IConfigurationProvider
 	{
 		private readonly Lazy<Configuration> configuration;
 

@@ -6,7 +6,7 @@ using Dapper;
 
 namespace Bloggares.Core.Services.DAL
 {
-	public class TokenDAL
+	public class TokenDAL : ITokenDAL
 	{
 		private readonly IDbConnection connection;
 

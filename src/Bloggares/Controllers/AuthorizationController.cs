@@ -10,9 +10,9 @@ namespace Bloggares.Controllers
 	{
 		private IUserService userService;
 
-		private TokenService tokenService;
+		private ITokenService tokenService;
 
-		public AuthorizationController(IUserService userService, TokenService tokenService)
+		public AuthorizationController(IUserService userService, ITokenService tokenService)
 		{
 			this.userService = userService;
 			this.tokenService = tokenService;

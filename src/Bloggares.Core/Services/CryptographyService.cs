@@ -4,11 +4,10 @@ using System.Text;
 
 namespace Bloggares.Core.Services
 {
-	public class CryptographyService
+	public class CryptographyService : ICryptographyService
 	{
 		private readonly SHA512 hasher = SHA512.Create();
 
-		// todo hashing shall be done in other service
 		public byte[] HashPassword(string password)
 		{
 			Contract.Requires(!string.IsNullOrEmpty(password));

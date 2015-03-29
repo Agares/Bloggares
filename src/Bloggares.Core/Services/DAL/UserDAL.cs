@@ -5,7 +5,7 @@ using Dapper;
 
 namespace Bloggares.Core.Services.DAL
 {
-	public class UserDAL
+	public class UserDAL : IUserDAL
 	{
 		private readonly IDbConnection connection;
 
@@ -22,7 +22,7 @@ namespace Bloggares.Core.Services.DAL
 			);
 		}
 
-		internal User FindUserByCredentials(string username, byte[] passwordHash)
+		public User FindUserByCredentials(string username, byte[] passwordHash)
 		{
 			return connection
 				.Query<User>(

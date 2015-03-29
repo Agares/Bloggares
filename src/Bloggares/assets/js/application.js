@@ -18,7 +18,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
 		let username = document.querySelector('#form-login-username').value;
 		let password = document.querySelector('#form-login-password').value;
-		
+
 		let authenticationService = new AuthenticationService();
 		var authorizedUser = authenticationService
 			.authenticate(username, password)

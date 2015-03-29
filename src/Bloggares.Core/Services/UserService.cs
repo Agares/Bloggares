@@ -6,11 +6,11 @@ namespace Bloggares.Core.Services
 {
 	public class UserService : IUserService
 	{
-		private readonly UserDAL userDAL;
-		private readonly TokenService tokenService;
-		private readonly CryptographyService cryptographyService;
+		private readonly IUserDAL userDAL;
+		private readonly ITokenService tokenService;
+		private readonly ICryptographyService cryptographyService;
 
-		public UserService(UserDAL userDAL, TokenService tokenService, CryptographyService cryptographyService)
+		public UserService(IUserDAL userDAL, ITokenService tokenService, ICryptographyService cryptographyService)
 		{
 			this.userDAL = userDAL;
 			this.tokenService = tokenService;

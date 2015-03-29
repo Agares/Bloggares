@@ -16,34 +16,4 @@ namespace Bloggares.Core
 
 		public abstract TOther Then<TOther>(Func<T, TOther> successAction, Func<string, TOther> errorAction);
 	}
-
-	public class FailResult<T> : Result<T>
-	{
-		private string Message { get; }
-
-		public FailResult(string message)
-		{
-			Message = message;
-		}
-
-		public override TOther Then<TOther>(Func<T, TOther> successAction, Func<string, TOther> errorAction)
-		{
-			return errorAction(Message);
-		}
-	}
-
-	public class OkResult<T> : Result<T>
-	{
-		public T Value { get; }
-
-		public OkResult(T resultValue)
-		{
-			Value = resultValue;
-		}
-
-		public override TOther Then<TOther>(Func<T, TOther> successAction, Func<string, TOther> errorAction)
-		{
-			return successAction(Value);
-		}
-	}
 }
