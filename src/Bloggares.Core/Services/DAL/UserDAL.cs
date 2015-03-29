@@ -1,4 +1,5 @@
-﻿using System.Data;
+﻿using System;
+using System.Data;
 using System.Linq;
 using Bloggares.Core.Entities;
 using Dapper;
@@ -20,6 +21,18 @@ namespace Bloggares.Core.Services.DAL
 				@"INSERT INTO users(username, passwordHash, accessLevel) VALUES(@username, @passwordHash, @accessLevel)",
 				new { username, passwordHash, accessLevel }
 			);
+		}
+
+		public AuthorizedUser FindUserByToken(Guid token)
+		{
+			return connection
+				.Query<AuthorizedUser>(
+					@"SELECT u.username, u.accessLevel, t.token FROM Users u
+						LEFT JOIN tokens t ON t.username=u.username
+						WHERE t.token=@token AND t.validUntil > NOW()",
+					new { token }
+				)
+				.SingleOrDefault();
 		}
 
 		public User FindUserByCredentials(string username, byte[] passwordHash)

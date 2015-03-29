@@ -1,5 +1,7 @@
 ﻿using System.Data;
 using Bloggares.Core;
+using Bloggares.Core.CommandExecutors;
+using Bloggares.Core.CQRS;
 using Bloggares.Core.Services;
 using Bloggares.Core.Services.DAL;
 using Bloggares.Database;
@@ -19,7 +21,6 @@ namespace Bloggares
 			{
 				serviceCollection.AddMvc();
 
-				// todo move to extension method
 				var configurationProvider = new ConfigurationProvider();
 				serviceCollection.AddInstance<IConfiguration>(configurationProvider.Configuration);
 
@@ -35,6 +36,9 @@ namespace Bloggares
 				serviceCollection.AddTransient<IMigrationController, MigrationController>();
 				serviceCollection.AddTransient<IUserService, UserService>();
 				serviceCollection.AddTransient<IPostService, PostService>();
+
+				serviceCollection.AddTransient<ICommandExecutor, UserCreateCommandExecutor>();
+				serviceCollection.AddTransient<ICommandManager, CommandManager>();
 			});
 
 			app.UseMvc();

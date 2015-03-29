@@ -8,11 +8,11 @@ namespace Bloggares.Controllers
 {
 	public class AuthorizeFilter : IActionFilter
 	{
-		private readonly ITokenService tokenService;
+		private readonly IUserService userService;
 
-		public AuthorizeFilter(ITokenService tokenService)
+		public AuthorizeFilter(IUserService userService)
 		{
-			this.tokenService = tokenService;
+			this.userService = userService;
 		}
 
 		public void OnActionExecuting(ActionExecutingContext context)
@@ -24,7 +24,7 @@ namespace Bloggares.Controllers
 				return;
 			}
 
-			tokenService
+			userService
 				.GetUserByToken(new Guid(token))
 				.Then
 				(

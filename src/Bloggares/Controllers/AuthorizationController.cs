@@ -10,12 +10,9 @@ namespace Bloggares.Controllers
 	{
 		private IUserService userService;
 
-		private ITokenService tokenService;
-
-		public AuthorizationController(IUserService userService, ITokenService tokenService)
+		public AuthorizationController(IUserService userService)
 		{
 			this.userService = userService;
-			this.tokenService = tokenService;
 		}
 
 		[HttpPost]
@@ -28,7 +25,7 @@ namespace Bloggares.Controllers
 		[HttpPost("get-user-by-token")]
 		public AuthorizedUser GetUserByToken(Guid token)
 		{
-			return tokenService.GetUserByToken(token)
+			return userService.GetUserByToken(token)
 				.Then(user => user, message => { throw new Exception(message); });
 		}
 	}

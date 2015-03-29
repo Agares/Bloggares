@@ -1,6 +1,9 @@
 ﻿using System;
+using System.Collections.Generic;
 using Bloggares.Core;
+using Bloggares.Core.CommandExecutors;
 using Bloggares.Core.Commands;
+using Bloggares.Core.CQRS;
 using Bloggares.Core.Services;
 using Bloggares.Core.Services.DAL;
 using Npgsql;
@@ -34,13 +37,10 @@ namespace Bloggares.Commands
 					}
 
 					var userDAL = new UserDAL(connection);
-					var tokenDAL = new TokenDAL(connection);
-
-					var tokenService = new TokenService(tokenDAL);
 					var cryptographyService = new CryptographyService();
-					var userService = new UserService(userDAL, tokenService, cryptographyService);
+					var commandManager = new CommandManager(new List<ICommandExecutor> { new UserCreateCommandExecutor(cryptographyService, userDAL) });
 
-					userService.Create(new UserCreateCommand(args[1], args[2], long.Parse(args[3])));
+					commandManager.Execute(new UserCreateCommand(args[1], args[2], long.Parse(args[3])));
 					break;
 
 				default:

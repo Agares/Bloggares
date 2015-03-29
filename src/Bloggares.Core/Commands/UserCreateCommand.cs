@@ -1,6 +1,8 @@
-﻿namespace Bloggares.Core.Commands
+﻿using Bloggares.Core.CQRS;
+
+namespace Bloggares.Core.Commands
 {
-	public class UserCreateCommand
+	public class UserCreateCommand : ICommand
 	{
 		public string Username { get; }
 
