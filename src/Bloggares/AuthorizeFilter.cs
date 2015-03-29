@@ -25,7 +25,7 @@ namespace Bloggares.Controllers
 			}
 
 			userService
-				.GetUserByToken(new Guid(token))
+				.GetUserByToken((Token)token)
 				.Then
 				(
 					authorizedUser => { InjectUserToController(context, authorizedUser); },

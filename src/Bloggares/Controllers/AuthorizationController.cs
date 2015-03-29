@@ -23,7 +23,7 @@ namespace Bloggares.Controllers
 		}
 
 		[HttpPost("get-user-by-token")]
-		public AuthorizedUser GetUserByToken(Guid token)
+		public AuthorizedUser GetUserByToken(Token token)
 		{
 			return userService.GetUserByToken(token)
 				.Then(user => user, message => { throw new Exception(message); });

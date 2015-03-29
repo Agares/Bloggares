@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Data;
+using Bloggares.Core.Entities;
 using Dapper;
 
 namespace Bloggares.Core.Services.DAL
@@ -13,11 +14,11 @@ namespace Bloggares.Core.Services.DAL
 			this.connection = connection;
 		}
 
-		public void CreateTokenForUser(string username, Guid token, DateTime validUntil)
+		public void CreateTokenForUser(string username, Token token, DateTime validUntil)
 		{
 			connection.Execute(
 				@"INSERT INTO tokens(username, token, validUntil) VALUES(@username, @token, @validUntil)",
-				new { username, token, validUntil }
+				new { username, token = (Guid)token, validUntil }
 			);
 		}
 	}

@@ -4,12 +4,12 @@ namespace Bloggares.Core.Entities
 {
 	public class AuthorizedUser : User
 	{
-		public Guid Token { get; private set; }
+		public Token Token { get; private set; }
 
 		[Obsolete("Only for ORM", true)]
 		public AuthorizedUser() { }
 
-		public AuthorizedUser(string username, long accessLevel, Guid token) : base(username, accessLevel)
+		public AuthorizedUser(string username, long accessLevel, Token token) : base(username, accessLevel)
 		{
 			Token = token;
 		}

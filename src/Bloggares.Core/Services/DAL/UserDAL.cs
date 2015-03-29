@@ -23,14 +23,14 @@ namespace Bloggares.Core.Services.DAL
 			);
 		}
 
-		public AuthorizedUser FindUserByToken(Guid token)
+		public AuthorizedUser FindUserByToken(Token token)
 		{
 			return connection
 				.Query<AuthorizedUser>(
 					@"SELECT u.username, u.accessLevel, t.token FROM Users u
 						LEFT JOIN tokens t ON t.username=u.username
 						WHERE t.token=@token AND t.validUntil > NOW()",
-					new { token }
+					new { token = (Guid)token }
 				)
 				.SingleOrDefault();
 		}

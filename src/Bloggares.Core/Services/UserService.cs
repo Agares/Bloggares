@@ -17,7 +17,7 @@ namespace Bloggares.Core.Services
 			this.cryptographyService = cryptographyService;
 		}
 
-		public Result<AuthorizedUser> Authorize(string username, string password) // todo UserCredentials object
+		public Result<AuthorizedUser> Authorize(string username, string password)
 		{
 			var passwordHash = cryptographyService.HashPassword(password);
 			var user = userDAL.FindUserByCredentials(username, passwordHash);
@@ -35,7 +35,7 @@ namespace Bloggares.Core.Services
 
 		// todo token entity
 		// todo cache?
-		public Result<AuthorizedUser> GetUserByToken(Guid token)
+		public Result<AuthorizedUser> GetUserByToken(Token token)
 		{
 			var user = userDAL.FindUserByToken(token);
 
