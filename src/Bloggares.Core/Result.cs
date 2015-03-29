@@ -15,5 +15,7 @@ namespace Bloggares.Core
 		}
 
 		public abstract TOther Then<TOther>(Func<T, TOther> successAction, Func<string, TOther> errorAction);
+
+		public abstract void Then(Action<T> successAction, Action<string> errorAction);
 	}
 }

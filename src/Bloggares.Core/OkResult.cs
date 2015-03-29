@@ -15,5 +15,10 @@ namespace Bloggares.Core
 		{
 			return successAction(Value);
 		}
+
+		public override void Then(Action<T> successAction, Action<string> errorAction)
+		{
+			successAction(Value);
+		}
 	}
 }

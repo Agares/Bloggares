@@ -15,6 +15,8 @@ namespace Bloggares
 		{
 			app.UseServices(serviceCollection =>
 			{
+				serviceCollection.AddMvc();
+
 				// todo move to extension method
 				// todo read Connection String from configuration
 				var connection = new NpgsqlConnection("Server=127.0.0.1;Database=Bloggares;User Id=Bloggares;Password=Bloggares");

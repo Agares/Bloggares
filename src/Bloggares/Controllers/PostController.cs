@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using Bloggares.Core.Entities;
 using Bloggares.Core.Services;
 using Microsoft.AspNet.Mvc;
@@ -7,35 +6,31 @@ using Microsoft.AspNet.Mvc;
 namespace Bloggares.Controllers
 {
 	[Route("api/posts")]
-	public class PostController : Controller
+	public class PostController : Controller, IUserAwareController
 	{
 		private IPostService postService;
-		private TokenService tokenService;
+		private ITokenService tokenService;
 		private IUserService userService;
 
-		public PostController(IPostService postService, IUserService userService, TokenService tokenService)
+		public PostController(IPostService postService, IUserService userService, ITokenService tokenService)
 		{
 			this.postService = postService;
 			this.userService = userService;
 			this.tokenService = tokenService;
 		}
 
-		[HttpGet]
-		public IEnumerable<Post> Index(Guid token)
-		{
-			var authorizedUser = tokenService.GetUserByToken(token);
+		public AuthorizedUser CurrentUser { set; get; }
 
-			return authorizedUser
-				.Then(user => postService.All(user.AccessLevel), message => { throw new Exception(message); });
+		[HttpGet, Authorize]
+		public IEnumerable<Post> Index()
+		{
+			return postService.All(CurrentUser.AccessLevel);
 		}
 
-		[HttpGet("{slug}")]
-		public Post Single(string slug, Guid token)
+		[HttpGet("{slug}"), Authorize]
+		public Post Single(string slug)
 		{
-			// todo move token to header and take care of authorization in base controller
-			var authorizedUser = tokenService.GetUserByToken(token);
-			return authorizedUser
-				.Then(user => postService.BySlug(slug, user.AccessLevel), message => { throw new Exception(message); });
+			return postService.BySlug(slug, CurrentUser.AccessLevel);
 		}
 	}
 }
