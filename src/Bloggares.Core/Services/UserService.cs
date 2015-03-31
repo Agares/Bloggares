@@ -1,5 +1,4 @@
-﻿using System;
-using Bloggares.Core.Entities;
+﻿using Bloggares.Core.Entities;
 using Bloggares.Core.Services.DAL;
 
 namespace Bloggares.Core.Services
@@ -24,13 +23,13 @@ namespace Bloggares.Core.Services
 
 			if (user == null)
 			{
-				return Result<AuthorizedUser>.Fail("Invalid username or password.");
+				return Result.Fail<AuthorizedUser>("Invalid username or password.");
 			}
 
 			var token = tokenService.CreateTokenForUser(username);
 			var authorizedUser = new AuthorizedUser(user.Username, user.AccessLevel, token);
 
-			return Result<AuthorizedUser>.Ok(authorizedUser);
+			return Result.Ok(authorizedUser);
 		}
 
 		public Result<AuthorizedUser> GetUserByToken(Token token)
@@ -38,8 +37,8 @@ namespace Bloggares.Core.Services
 			var user = userDAL.FindUserByToken(token);
 
 			return user == null
-				? Result<AuthorizedUser>.Fail("Invalid or expired token.")
-				: Result<AuthorizedUser>.Ok(user);
+				? Result.Fail<AuthorizedUser>("Invalid or expired token.")
+				: Result.Ok(user);
 		}
 	}
 }
