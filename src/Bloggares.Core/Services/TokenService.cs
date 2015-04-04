@@ -13,9 +13,9 @@ namespace Bloggares.Core.Services
 			this.tokenDAL = tokenDAL;
 		}
 
-		public Token CreateTokenForUser(string username)
+		public Guid CreateTokenForUser(string username)
 		{
-			var token = Token.Random();
+			var token = Guid.NewGuid();
 			tokenDAL.CreateTokenForUser(username, token, DateTime.Now.AddDays(1)); // todo configurable validity time
 			return token;
 		}

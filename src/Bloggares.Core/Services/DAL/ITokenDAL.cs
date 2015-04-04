@@ -5,6 +5,6 @@ namespace Bloggares.Core.Services.DAL
 {
 	public interface ITokenDAL
 	{
-		void CreateTokenForUser(string username, Token token, DateTime validUntil);
+		void CreateTokenForUser(string username, Guid token, DateTime validUntil);
 	}
 }

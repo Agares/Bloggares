@@ -2,11 +2,11 @@
 
 class PostService
 {
-	all() {
+	all(user) {
 		var promise = new Promise((resolve, reject) => {
 			superagent
 				.get('/api/posts')
-				.query({ token: '5a1f0776-525d-45a4-be08-86f70a8670ed' })
+				.set('X-Bloggares-Token', user.Token)
 				.end(function (error, resource) {
 					if (resource.ok) {
 						resolve(JSON.parse(resource.text));

@@ -1,7 +1,9 @@
-﻿using System.Data;
+﻿using System;
+using System.Data;
 using Bloggares.Core;
 using Bloggares.Core.CommandExecutors;
 using Bloggares.Core.CQRS;
+using Bloggares.Core.Entities;
 using Bloggares.Core.Services;
 using Bloggares.Core.Services.DAL;
 using Bloggares.Database;
@@ -9,6 +11,7 @@ using Microsoft.AspNet.Builder;
 using Microsoft.AspNet.Mvc;
 using Microsoft.Framework.ConfigurationModel;
 using Microsoft.Framework.DependencyInjection;
+using Newtonsoft.Json;
 using Npgsql;
 
 namespace Bloggares

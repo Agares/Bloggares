@@ -23,7 +23,7 @@ namespace Bloggares.Core.Services.DAL
 			);
 		}
 
-		public AuthorizedUser FindUserByToken(Token token)
+		public AuthorizedUser FindUserByToken(Guid token)
 		{
 			return connection
 				.Query<AuthorizedUser>(

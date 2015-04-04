@@ -1,4 +1,5 @@
-﻿using Bloggares.Core.Entities;
+﻿using System;
+using Bloggares.Core.Entities;
 using Bloggares.Core.Services.DAL;
 
 namespace Bloggares.Core.Services
@@ -32,7 +33,7 @@ namespace Bloggares.Core.Services
 			return Result.Ok(authorizedUser);
 		}
 
-		public Result<AuthorizedUser> GetUserByToken(Token token)
+		public Result<AuthorizedUser> GetUserByToken(Guid token)
 		{
 			var user = userDAL.FindUserByToken(token);
 

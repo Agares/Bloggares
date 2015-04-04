@@ -1,7 +1,6 @@
 ﻿var superagent = require('superagent');
 
-class AuthenticationService
-{
+class AuthenticationService {
 	authenticate(username, password) {
 		var promise = new Promise((resolve, reject) => {
 			superagent

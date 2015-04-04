@@ -9,6 +9,6 @@ namespace Bloggares.Core.Services.DAL
 
 		User FindUserByCredentials(string username, byte[] passwordHash);
 
-		AuthorizedUser FindUserByToken(Token token);
+		AuthorizedUser FindUserByToken(Guid token);
 	}
 }
