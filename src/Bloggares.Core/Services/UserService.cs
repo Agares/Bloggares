@@ -1,5 +1,6 @@
 ﻿using System;
-using Bloggares.Core.Entities;
+using Bloggares.Common.Entities;
+using Bloggares.Common.Result;
 using Bloggares.Core.Services.DAL;
 
 namespace Bloggares.Core.Services

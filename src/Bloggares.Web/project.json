@@ -1,0 +1,39 @@
+﻿{
+	"webroot": "wwwroot",
+	"version": "1.0.0-*",
+	"dependencies": {
+		"Microsoft.AspNet.Mvc": "6.0.0-beta3",
+		"Microsoft.AspNet.Diagnostics": "1.0.0-beta3",
+		"Microsoft.AspNet.Server.IIS": "1.0.0-beta3",
+		"Microsoft.AspNet.Server.WebListener": "1.0.0-beta3",
+		"Microsoft.AspNet.StaticFiles": "1.0.0-beta3",
+		"Microsoft.AspNet.Session": "1.0.0-beta3",
+		"Microsoft.Framework.ConfigurationModel.Json": "1.0.0-beta3",
+		"Microsoft.Framework.CodeGenerators.Mvc": "1.0.0-beta3",
+		"Microsoft.Framework.Logging": "1.0.0-beta3",
+		"Microsoft.Framework.Logging.Console": "1.0.0-beta3",
+		"Microsoft.VisualStudio.Web.BrowserLink.Loader": "14.0.0-beta3",
+		"RestSharp": "105.0.1",
+		"Bloggares.Common": "",
+		"CommonMark.NET": "0.8.5"
+	},
+	"commands": {
+		"web": "Microsoft.AspNet.Hosting --server Microsoft.AspNet.Server.WebListener --server.urls http://localhost:5000"
+	},
+	"frameworks": {
+		"aspnet50": { }
+	},
+	"exclude": [
+		"wwwroot",
+		"node_modules"
+	],
+	"bundleExclude": [
+		"node_modules",
+		"**.kproj",
+		"**.user",
+		"**.vspscc"
+	],
+	"scripts": {
+		"postrestore": [ "npm install" ]
+	}
+}

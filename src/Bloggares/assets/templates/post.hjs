@@ -1,4 +1,0 @@
-﻿<article class="post">
-	<h2>{{Title}}</h2>
-	{{{Content}}}
-</article>

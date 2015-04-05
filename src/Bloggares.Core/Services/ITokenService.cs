@@ -1,5 +1,4 @@
 ﻿using System;
-using Bloggares.Core.Entities;
 
 namespace Bloggares.Core.Services
 {

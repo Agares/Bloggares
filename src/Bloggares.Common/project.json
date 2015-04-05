@@ -1,0 +1,14 @@
+﻿{
+	"version": "1.0.0-*",
+	"dependencies": {
+		"RestSharp": "105.0.1",
+		"ServiceStack.Text": "4.0.9"
+	},
+
+	"frameworks": {
+		"aspnet50": {
+			"dependencies": {
+			}
+		}
+	}
+}

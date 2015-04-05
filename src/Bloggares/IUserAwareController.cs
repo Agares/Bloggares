@@ -1,6 +1,6 @@
-﻿using Bloggares.Core.Entities;
+﻿using Bloggares.Common.Entities;
 
-namespace Bloggares.Controllers
+namespace Bloggares.WebService
 {
 	public interface IUserAwareController
 	{

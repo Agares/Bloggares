@@ -1,10 +1,10 @@
 using System;
 using System.Net;
-using Bloggares.Core.Entities;
+using Bloggares.Common.Entities;
 using Bloggares.Core.Services;
 using Microsoft.AspNet.Mvc;
 
-namespace Bloggares.Controllers
+namespace Bloggares.WebService
 {
 	public class AuthorizeFilter : IActionFilter
 	{

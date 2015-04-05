@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Data;
-using Bloggares.Core.Entities;
 using Dapper;
 
 namespace Bloggares.Core.Services.DAL

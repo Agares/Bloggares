@@ -1,0 +1,9 @@
+﻿@model IEnumerable<Bloggares.Common.Entities.Post>
+
+@foreach (var post in Model)
+{
+	<article class="post">
+		<h2>@post.Title</h2>
+		@Html.Raw(CommonMark.CommonMarkConverter.Convert(post.Content))
+	</article>
+}

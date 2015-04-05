@@ -1,9 +1,9 @@
 ﻿using System.Collections.Generic;
-using Bloggares.Core.Entities;
+using Bloggares.Common.Entities;
 using Bloggares.Core.Services;
 using Microsoft.AspNet.Mvc;
 
-namespace Bloggares.Controllers
+namespace Bloggares.WebService.Controllers
 {
 	[Route("api/posts")]
 	public class PostController : Controller, IUserAwareController

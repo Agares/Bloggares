@@ -1,9 +1,9 @@
 ﻿using System;
-using Bloggares.Core.Entities;
+using Bloggares.Common.Entities;
 using Bloggares.Core.Services;
 using Microsoft.AspNet.Mvc;
 
-namespace Bloggares.Controllers
+namespace Bloggares.WebService.Controllers
 {
 	[Route("api/authorization")]
 	public class AuthorizationController : Controller
@@ -22,6 +22,7 @@ namespace Bloggares.Controllers
 				.Then(user => user, message => { throw new Exception(message); });
 		}
 
+		// todo why is that POST? should be GET
 		[HttpPost("get-user-by-token")]
 		public AuthorizedUser GetUserByToken(Guid token)
 		{

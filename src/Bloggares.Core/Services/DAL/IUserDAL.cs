@@ -1,5 +1,5 @@
 ﻿using System;
-using Bloggares.Core.Entities;
+using Bloggares.Common.Entities;
 
 namespace Bloggares.Core.Services.DAL
 {
